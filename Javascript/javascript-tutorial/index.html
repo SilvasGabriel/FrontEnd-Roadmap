@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-4 mb-4">Fetch API Sandbox</h1>
+        <div class="d-flex">
+            <button class="btn btn-primary mr-4" id="getText">Get Text</button>
+            <button class = "btn btn-success mr-4" id="getUsers">Get JSON</button>
+            <button class = "btn btn-warning mr-4" id="getPosts">Get API DATA</button>
+        </div>
+        <hr>
+
+        <div id="output"></div>
+        
+        <form id="addPost">
+            <div class="form-group">
+                <input class="form-control" type="text" id="title" placeholder="Title">
+            </div>
+
+            <div class="form-group">
+            <textarea class="form-control" id="body" placeholder="Body"></textarea>
+            </div>
+
+            <input class="btn btn-secondary" type="submit" value="Submit">
+        </form>
+        
+    </div>
+   
+
+    <script>
+        document.getElementById('getText').addEventListener('click',getText)//File Txt
+        document.getElementById('getUsers').addEventListener('click',getUsers)//JSON file
+        document.getElementById('getPosts').addEventListener('click',getPosts)//Outside of the project
+        document.getElementById('addPost').addEventListener('submit',addPosts)//Outside of the project
+        
+
+        function getText() {
+
+            fetch('simple.txt').then((res)=>{ 
+               
+                return res.text() 
+
+            }).then((data)=>{
+
+                document.getElementById('output').innerHTML = data
+            
+            }).catch((erro)=>{
+                console.log(erro)
+            })
+        
+        }
+
+        function getUsers (){
+            fetch('users.json').then((res)=>{
+                return res.json()
+            }).then((data)=>{
+                let output = '<h2 class = "mb-4">Users</h2>'
+
+                data.forEach( function(user){
+                    output += `
+                    <ul class = "list-group mb-3">
+                        <li class="list-group-item">Id: ${user.id}</li>
+                        <li class="list-group-item">Name: ${user.name}</li>
+                        <li class="list-group-item">Email: ${user.email}</li>
+                    </ul>
+                    `
+                });
+                
+                document.getElementById('output'). innerHTML = output
+            })
+        }
+
+        function getPosts (){
+            fetch('https://jsonplaceholder.typicode.com/posts').then((res)=>{
+                return res.json()
+            }).then((data)=>{
+                let output = '<h2 class = "mb-4">Posts</h2>'
+
+                data.forEach( function(post){
+                    output += `
+                    <div class ="card card-body mb-3">
+                        <h3> ${post.title} </h3>
+                        <p>${post.body}</p>
+                    </div>
+                    `
+                });
+                
+                document.getElementById('output'). innerHTML = output
+            })
+        }
+       
+        function addPosts(event){
+            event.preventDefault()
+
+            let title = document.getElementById('title').value;
+            let body = document.getElementById('body').value;
+
+            fetch('https://jsonplaceholder.typicode.com/posts',{
+                method:'POST',
+                headers:{
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify({title:title, body:body})
+            }).then((res)=>{
+                return res.json()
+            }).then((data)=>{
+                console.log(data)
+            })
+        }
+
+    </script>
+</body>
+</html>

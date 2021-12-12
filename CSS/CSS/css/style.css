@@ -1,0 +1,140 @@
+body{
+   background:linear-gradient(to bottom, rgb(197, 224, 224), rgba(197, 224, 224, 0.5));
+   /* background: url("https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");*/  
+    text-align: justify;
+    font-size: 1.15em;
+    font-family: "Lato", sans-serif;
+    
+}
+input, textarea{
+    display: block;
+    margin: 10px;
+}
+
+#title {
+    color: rgb(242, 134, 12);
+    font-family: 'Poppins', sans-serif;
+   
+}
+.subtitle{
+    color: rgb(243, 167, 67);
+    font-family: 'Poppins', sans-serif;
+}
+
+#service-image{
+    height: 400px;
+    width: 70vw;
+    
+    background: radial-gradient(circle, blue ,yellow ,green );
+    border: 3px double black;
+
+}
+.italic{
+    font-style: italic;
+
+}
+
+link{
+    text-decoration: underline;
+}
+
+#about-us-image{
+    height: 250px;
+    width: 45%;
+
+    border: 3px solid black;
+    margin: 80px 40px;
+
+    float: right;
+}
+
+.site-table{
+    display: inline-block;
+}
+
+.container{
+    background-color: rgb(250,250,250);
+    margin: 10px;
+    height: 300px;
+  
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container-item{
+    background: rgb(36, 130, 39);
+    color: white;
+    font-size: 25px;
+    text-align: center;
+
+    width: 70px;
+    line-height: 50px;
+    margin: 10px;
+}
+
+.container-grid{
+    background-color: rgb(250, 250, 250);
+    margin: 10px;
+    height: 500px;
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto ;
+   
+}
+
+.grid-item{
+    
+    color: black;
+    font-size: 25px;
+    text-align: center;
+
+    width: 70px;
+    line-height: 40px;
+    margin: 10px;
+}
+
+.submit-button{
+    margin: 20px 10px;
+    padding: 10px 15px;
+    border: none;
+    text-decoration: none;
+    font-family: "Lato",sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: white;
+    background: rgb(89, 150, 255);
+    transform: matrix(1,0.4,0.4,1,100,50);
+    transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+}
+
+.submit-button:hover{
+    background: rgb(147, 187, 255);
+    padding: 20px 30px;
+}
+
+#about-me{
+    animation: translate-element 6s linear 2s infinite alternate;
+    -moz-animation: translate-element 6s linear 2s infinite alternate;
+    -ms-animation: translate-element 6s linear 2s infinite alternate;
+    -o-animation: translate-element 6s linear 2s infinite alternate;
+    
+    /*animation-name: translate-element;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;*/
+}
+
+@keyframes translate-element{
+    0% {background: red; transform: translate(0px,0px);                   }
+    50% {background: yellow; transform: translate(10px,10px)}
+    100% {background: black; transform: translate(20px,20px)}
+}
