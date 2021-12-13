@@ -62,12 +62,43 @@
       background: black;
       position: absolute;
       top: 50%;
+      /*Essa propriedade faz que a ponta do ponteiro do lado direito fique centralizada*/
+      transform-origin: 100%;
+      /*Essa propriedade faz que o ponteiro se inicialize aos 90graus*/
+      transform: rotate(90deg);
     }
 
   </style>
 
-  <script>
 
+  <script>
+  
+  //No query selector cuidado na hora de mudar o nome da classe, se mudar mude na tag html também
+  const segundosPonteiro = document.querySelector('.second-hand');
+  const minutosPonteiro = document.querySelector('.min-hand');
+  const horasPonteiro = document.querySelector('.hour-hand');
+
+  function setDate() {
+    const now = new Date();
+
+    const segundos = now.getSeconds()
+    //Os +90 adicionados são porque no transform a origem é de 90 para todos os ponteiros então adicionando mais 90 eles voltam ao normal
+    const segundosDegrees = ((segundos / 60) * 360) + 90
+    segundosPonteiro.style.transform = `rotate(${segundosDegrees}deg)`
+
+    const minutos = now.getMinutes()
+    const minutosDegrees = ((minutos / 60) * 360) + 90
+    minutosPonteiro.style.transform = `rotate(${minutosDegrees}deg)`
+
+    const horas = now.getHours()
+    const horasDegrees = ((horas / 12) * 360) + 90
+    horasPonteiro.style.transform = `rotate(${horasDegrees}deg)`
+  }
+
+
+   setInterval(()=>{
+     setDate()
+  },1000)
 
   </script>
 </body>
