@@ -15,7 +15,60 @@
     </ul>
   </form>
 <script>
+
 const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+
+const cidades = [];
+
+ fetch(endpoint)
+      .then(amontoado => amontoado.json())
+      .then(data => cidades.push(...data)) 
+
+function FiltrarNomes (nomesCombinam, cidades) {
+  
+  return cidades.filter((local)=>{
+    
+    //Aqui temos que descobrir se os nomes das cidades combinam com o que foi digitado
+    const regex = new RegExp(nomesCombinam, 'gi')
+
+    return local.city.match(regex) || local.state.match(regex)
+
+  })
+}
+
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+function displayNomes () {
+  
+  const Conbinados = FiltrarNomes(this.value, cidades)
+
+  const html = Conbinados.map(local => {
+
+    const regex = new RegExp(this.value, 'gi')
+    const NomesCidades = local.city.replace(regex, `<span class="hl">${this.value}</span>`)
+    const NomesEstados = local.state.replace(regex, `<span class="hl">${this.value}</span>`)
+
+
+    return `
+      <li>
+        <span class="name">${NomesCidades}, ${NomesEstados}</span>
+        <span class="population">${numberWithCommas(local.population)}</span>
+      </li>
+    `
+    }).join('')
+
+  sugestoes.innerHTML = html
+
+}
+
+const pesquisar = document.querySelector('.search')
+const sugestoes = document.querySelector('.suggestions') 
+
+pesquisar.addEventListener('change', displayNomes)
+pesquisar.addEventListener('keyup', displayNomes)
+
 
 </script>
 </body>
