@@ -1,0 +1,7 @@
+Neste exercicio eu tive que olhar no https://stackoverflow.com/questions/57149805/how-to-reuse-variables-defined-in-root-component-in-another-component para conseguir resolve-lo.
+
+Porém observando como resolvido consegui aprender que podemos passar uma propriedade dentro de outra.
+
+Outra coisa também se acessarmos uma propriedade da outra passamos um objeto dentro do outro associando o dado passado pelas props nas consts passadas em App.
+
+Este assunto ta meio que uma bagunça na minha cabeça ainda então ainda vou dar uma revisada em outros materiais para deixar mais claro. 
