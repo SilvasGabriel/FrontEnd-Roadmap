@@ -6,7 +6,69 @@
 </head>
 <body>
 <canvas id="draw" width="800" height="800"></canvas>
+
 <script>
+
+  const canvas = document.querySelector('#draw')
+  const ctx = canvas.getContext('2d')
+  
+  canvas.width = window.innerWidth
+  canvas.height = window.innerHeight
+
+  ctx.strokeStyle = '#BADA55'
+  ctx.lineJoin = 'round'
+  ctx.lineCap = 'round'
+
+  ctx.lineWidth = 20
+
+  let Desenhando = false
+  let ultimoY = 0
+  let ultimoX = 0
+
+  let hue = 0
+
+  
+
+  function Desenho (evento) {
+    
+    if(!Desenhando){
+      return 
+    }
+
+    
+    ctx.strokeStyle = (`hsl(${hue}, 100%, 50%)`)
+
+    ctx.beginPath()
+    ctx.moveTo(ultimoX, ultimoY)
+    ctx.lineTo(evento.offsetX, evento.offsetY)
+    ctx.stroke()
+
+    ultimoX = evento.offsetX
+    ultimoY= evento.offsetY
+
+    hue++
+
+    if(hue >= 360){
+
+        hue=0
+        
+    }
+
+    console.log(evento)
+  }
+
+  canvas.addEventListener('mousemove', Desenho)
+
+  canvas.addEventListener('mousedown', (evento) => {
+    Desenhando = true
+    ultimoX = evento.offsetX
+    ultimoY= evento.offsetY
+
+  })
+
+  canvas.addEventListener('mouseup', () => Desenhando = false)
+  canvas.addEventListener('mouseout', () => Desenhando = false)
+
 </script>
 
 <style>
