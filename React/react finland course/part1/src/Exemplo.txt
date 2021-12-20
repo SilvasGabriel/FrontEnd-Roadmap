@@ -1,3 +1,5 @@
+#Exercicios 1.1 e 1,2
+
 Neste exercicio eu tive que olhar no https://stackoverflow.com/questions/57149805/how-to-reuse-variables-defined-in-root-component-in-another-component para conseguir resolve-lo.
 
 Porém observando como resolvido consegui aprender que podemos passar uma propriedade dentro de outra.
@@ -7,3 +9,7 @@ Outra coisa também se acessarmos uma propriedade da outra passamos um objeto de
 Este assunto ta meio que uma bagunça na minha cabeça ainda então ainda vou dar uma revisada em outros materiais para deixar mais claro.
 
 Depois de observar outro material nesse video https://www.youtube.com/watch?v=ZLtBdpwg8tI aprendi que podemos desestruturar uma propriedade diminuindo a quantidade de codigo que iremos usar e tornando ele mais legível.
+
+#Exercicios 1.3 e 1,5
+
+Nesse exercicio consegui aprender que podemos resolver de varias maneiras entre elas desestruturando as props e passando as variaveis diretamente outra foi forma foi desesturturar a prop com o nome da propriedade no array e dividir os objetos em partes no array. E para melhorar preciso resolver mais exercicios sobre array functions em javascript.
