@@ -35,13 +35,13 @@ const Content = ({ parts }) => {
 
 }
 
-const Total = (props) => {
+const Total = ({ parts }) => {
+
+  const [part1 , part2, part3] = parts
 
   return (
     <div>
-      <p>Numbers of exercises { props.parts[0]["exercises"] +
-        props.parts[1]["exercises"] +
-        props.parts[2]["exercises"] }</p>
+      <p>Numbers of exercises { part1.exercises + part2.exercises + part3.exercises }</p>
     </div>
   )
 
