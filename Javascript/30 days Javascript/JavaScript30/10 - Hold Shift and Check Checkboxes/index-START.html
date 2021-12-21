@@ -96,6 +96,52 @@
   </div>
 
 <script>
+
+  const caixas = document.querySelectorAll('.inbox input[type="checkbox"]')
+
+  let lastChecked;
+
+
+  function handleCheck (evento) {
+
+    let noMeio = false
+    
+    //Observar se foi apertado a tecla shift foi apertada
+    // E também observar se o botão está marcado
+
+    if(evento.shiftKey && this.checked){
+
+      //Fazer um loop para verificar cada checkbox
+      caixas.forEach(checkbox => {
+
+        if(checkbox === this || checkbox === lastChecked){
+
+          noMeio = !noMeio
+
+          console.log('Checar se está mostrando o que está no meio!')
+
+        }
+
+        if(noMeio){
+
+          checkbox.checked = true
+
+        }
+
+        console.log(checkbox)
+      })
+
+    }
+    
+    lastChecked = this;
+  }
+
+  caixas.forEach(checkbox => checkbox.addEventListener('click', handleCheck))
+
+
+
+  console.log(caixas)
+
 </script>
 </body>
 </html>
