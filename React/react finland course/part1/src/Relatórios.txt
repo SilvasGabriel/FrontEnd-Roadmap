@@ -1,4 +1,4 @@
-#Exercicios 1.1 e 1,2
+#Exercicios 1.1 a 1.2
 
 Neste exercicio eu tive que olhar no https://stackoverflow.com/questions/57149805/how-to-reuse-variables-defined-in-root-component-in-another-component para conseguir resolve-lo.
 
@@ -10,6 +10,13 @@ Este assunto ta meio que uma bagunça na minha cabeça ainda então ainda vou da
 
 Depois de observar outro material nesse video https://www.youtube.com/watch?v=ZLtBdpwg8tI aprendi que podemos desestruturar uma propriedade diminuindo a quantidade de codigo que iremos usar e tornando ele mais legível.
 
-#Exercicios 1.3 e 1,5
+#Exercicios 1.3 a 1.5
 
 Nesse exercicio consegui aprender que podemos resolver de varias maneiras entre elas desestruturando as props e passando as variaveis diretamente outra foi forma foi desesturturar a prop com o nome da propriedade no array e dividir os objetos em partes no array. E para melhorar preciso resolver mais exercicios sobre array functions em javascript.
+
+#Exercicios 1.6 a 1.11
+
+Resolvendo o exercicio todo sem separar as partes em componentes foi tranquilo ficou parecido com o que foi esperado porém quando começou a separar os componentes e dividir as propriedades fiquei muito tempo tentando resolver como passar e para onde passar as propriedades dos botões para resolver eu tive que olhar em um repositório para entender como as propriedades foram passadas.
+Observei nesse link https://github.com/fabiojung/fullstackopen.com/blob/master/part1/unicafe/src/index.js
+
+Ainda falta muitas coisas para entender e aprender mas sinto que está melhorando e fazendo mais sentido na minha cabeça.

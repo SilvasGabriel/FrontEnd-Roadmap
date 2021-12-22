@@ -1,87 +1,48 @@
-import React from 'react'
+import React,{useState} from 'react'
 
-const Header = ({ course }) => {
-  return (
-    <div>
-      <h1>{course.name}</h1>
-    </div>
-  )
-}
-
-const Part = (props) => {
-
-  //Desestruturando uma propriedade para acessar o valor
-  const {name, exercises} = props
-
-  return (
-    <p>
-      {name} {exercises}
-    </p>
-  )
-
-}
-
-const Content = ({ parts }) => {
-
-  const [part1, part2, part3] = parts
-
-  return (
-    <div>
-      <Part name={part1.name} exercises={part1.exercises} />
-      <Part name={part2.name} exercises={part2.exercises} />
-      <Part name={part3.name} exercises={part3.exercises} />
-    </div>
-  )
-
-}
-
-const Total = ({ parts }) => {
-
-  const [part1 , part2, part3] = parts
-
-  return (
-    <div>
-      <p>Numbers of exercises { part1.exercises + part2.exercises + part3.exercises }</p>
-    </div>
-  )
-
-}
+//Componentes
+import Title from './Exercises 1.6-1.11/Title'
+import Button from './Exercises 1.6-1.11/Button'
+import Statistics from './Exercises 1.6-1.11/Statistics'
 
 const App = () => {
-
-  const course = {
-    name: 'Half Stack application development',
-    parts: [
-      {
-        name: 'Fundamentals of React',
-        exercises: 10
-      },
-      {
-        name: 'Using props to pass data',
-        exercises: 7
-      },
-      {
-        name: 'State of a component',
-        exercises: 14
-      }
-    ]
-  }
+    
+    const [good, setGood] = useState(0)
+    const [neutral, setNeutral] = useState(0)
+    const [bad, setBad] = useState(0)
 
 
-  return (
-    <div>
+    const handleClickGood = () =>{
+        setGood(good + 1)
+    }
 
-      <Header course={course} />
-      <Content parts={course.parts} />
-      <Total  parts={course.parts}/>
+    
+    const handleClickNeutral = () =>{
+        setNeutral(neutral + 1)
+    }
 
-      {/* 
-          <Content parts={{part1: part1, part2: part2, part3: part3, exercises1: exercises1, exercises2: exercises2, exercises3: exercises3,}}/>
-          <Total total={{exercises1: exercises1, exercises2: exercises2, exercises3: exercises3}}/>
-      */}
+    const handleClickBad = () =>{
+        setBad(bad + 1)
+    }
 
-    </div>
-  )
+    return (
+
+        <div>
+            <Title title="Give Feedback"/>
+            
+            <Button name="Good"  handleClick={handleClickGood} />
+
+            <Button name="Neutral" handleClick={handleClickNeutral} />
+
+            <Button name="Bad"  handleClick={handleClickBad}/>
+            
+            <Title title="Statistics" />
+
+            <Statistics good={good} neutral={neutral} bad={bad}/>
+
+           
+        </div>
+    )
 }
 
 export default App
