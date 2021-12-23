@@ -20,3 +20,8 @@ Resolvendo o exercicio todo sem separar as partes em componentes foi tranquilo f
 Observei nesse link https://github.com/fabiojung/fullstackopen.com/blob/master/part1/unicafe/src/index.js
 
 Ainda falta muitas coisas para entender e aprender mas sinto que está melhorando e fazendo mais sentido na minha cabeça.
+
+#Exercicios 1.12 a 1.14
+
+Esse exercicio aqui so provou que quanto mais eu acho que estou aprendendo menos eu sei, a parte de mostrar o array com o que tá escrito e configurar os botões para adicionar 1 + cada vez que passa no botão foi tranquilo, porém quando precisou adicionar a funcionalidade de votar pareceu que tudo que eu estudei qui nao serviu de porcaria nenhuma e lá fui eu atrás de uma solução pra tentar entender de como o exercicio foi resolvido https://codesandbox.io/s/fullstackopenpart1anecdotes-hr6l7, então pelo que eu entendi no exercicio você tem que gerar as anedotas random porque se não no botão enquanto você continuar passaando uma hora ele irá encerrar e irá para uma tela onde os dados irão acabar e irá aparecer um erro NaN votes e nenhuma anedota, outra coisa  também e transformar os votos num array vazio com zeros para salvar cada uma das notas  e para salvar o maior valor é so salvar numa variavel os ...votos com Math.max.
+Cara esse exercicio aqui eu achei ele um tanto complicadinho por causa do array e dos votos no array o exercicio passado parece que me deu um parecer de estar aprendendo mais.

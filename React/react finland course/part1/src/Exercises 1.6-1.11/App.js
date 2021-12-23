@@ -1,9 +1,9 @@
 import React,{useState} from 'react'
 
 //Componentes
-import Title from './Exercises 1.6-1.11/Title'
-import Button from './Exercises 1.6-1.11/Button'
-import Statistics from './Exercises 1.6-1.11/Statistics'
+import Title from './Title'
+import Button from './Button'
+import Statistics from './Statistics'
 
 const App = () => {
     
