@@ -6,7 +6,30 @@
   <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
 </head>
 <body>
+
 <script>
+
+  const arrayPress = []
+  const secret = 'gabriel'
+
+  window.addEventListener('keyup', (e) => {
+
+      console.log(e.key)
+
+      arrayPress.push(e.key)
+
+      arrayPress.splice(-secret.length - 1, arrayPress.length - secret.length)
+
+      if(arrayPress.join('').includes(secret)){
+        console.log('VOCÊ ENCONTROU O SEGREDO!')
+
+        cornify_add()
+
+      }
+
+      console.log(arrayPress)
+  })
+
 </script>
 </body>
 </html>
