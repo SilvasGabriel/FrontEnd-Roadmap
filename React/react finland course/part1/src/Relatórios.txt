@@ -29,3 +29,8 @@ Cara esse exercicio aqui eu achei ele um tanto complicadinho por causa do array 
 #Exercicios 2.1-2.5
 
 No inicio do exercicio separar os componentes foi tranquilo usar a função map também foi tranquilo porém quando a estrutura do array no exercicio mudou eu meio que fiquei perdido porque antes eu tinha somente um array agora eu tenho um array dentro do array com objetos então para min ter uma noção a onde eu tinha que colocar a função map eu olhei nesse repositório https://github.com/yeongjonglim/fullstackopen/tree/master/2/courseinfo/src assim eu consegui entender como foi feito para passar os dados sobre 2 arrays.
+
+#Exercicios 2.6-2.7
+
+Este exercicio foi bem tranquilo seguindo o exemplo até o momento de usar a função para ativar o alertana tela eu testei primeiro o forEach porém ele mostrava todos os nomes depois eu testei o filter porém na hora de aplicar a função no if/else ele retornava sempre o contrário depois eu usei o .some() que retorna true para um valor então assim eu consegui checar a função. Hoje eu não terminei o exercicio pois minha cabeça ta zuada.
+
