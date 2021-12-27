@@ -34,3 +34,7 @@ No inicio do exercicio separar os componentes foi tranquilo usar a função map 
 
 Este exercicio foi bem tranquilo seguindo o exemplo até o momento de usar a função para ativar o alertana tela eu testei primeiro o forEach porém ele mostrava todos os nomes depois eu testei o filter porém na hora de aplicar a função no if/else ele retornava sempre o contrário depois eu usei o .some() que retorna true para um valor então assim eu consegui checar a função. Hoje eu não terminei o exercicio pois minha cabeça ta zuada.
 
+#Exercicios 2.7-2.10
+
+Aqui eu consegui fazer tudo até a parte de filtrar onde os tinha que passar uma função filter e transformar os valores em upperCase() porém encontrei um material neste repositório https://github.com/ezecool/fullstackopen/blob/main/part2/phonebook/src/App.js onde ele fez essa função e eu consegui entender de uma forma bem mais simples. Outro problema também foi migrar de um componente só para varios nesse caso a parte das pessoas estavam bem tranquilo porém na hora de passar o formulário foi um problema aprendi que podemos passar funçãoes onChange de botões como props e que para passar um valor de um input como prop temos que colocar no input do component uma propriedade chamada value ela que irá retornar  os valores do seu useState().
+
