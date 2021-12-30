@@ -34,7 +34,10 @@ No inicio do exercicio separar os componentes foi tranquilo usar a função map 
 
 Este exercicio foi bem tranquilo seguindo o exemplo até o momento de usar a função para ativar o alertana tela eu testei primeiro o forEach porém ele mostrava todos os nomes depois eu testei o filter porém na hora de aplicar a função no if/else ele retornava sempre o contrário depois eu usei o .some() que retorna true para um valor então assim eu consegui checar a função. Hoje eu não terminei o exercicio pois minha cabeça ta zuada.
 
-#Exercicios 2.7-2.10
+#Exercicios 2.7-2.11
 
 Aqui eu consegui fazer tudo até a parte de filtrar onde os tinha que passar uma função filter e transformar os valores em upperCase() porém encontrei um material neste repositório https://github.com/ezecool/fullstackopen/blob/main/part2/phonebook/src/App.js onde ele fez essa função e eu consegui entender de uma forma bem mais simples. Outro problema também foi migrar de um componente só para varios nesse caso a parte das pessoas estavam bem tranquilo porém na hora de passar o formulário foi um problema aprendi que podemos passar funçãoes onChange de botões como props e que para passar um valor de um input como prop temos que colocar no input do component uma propriedade chamada value ela que irá retornar  os valores do seu useState().
 
+Exercicios 2.12-2.14
+
+Que exercicio mais desgraçado porque eu nao consegui sair da porra do zero praticamente, consegui resolver somente a parte de filtrar fazendo o componente e passando o botão seguindo disso eu assisti esse video para resolver https://youtu.be/Ia0-8GeIfyE e meio que deu uma clareada na mente de como funciona porém de pois que chegou na parte de usar uma api que usa key o bicho pegou aqui eu fiquei mais de 8 horas para pelo menos ter uma noção de como usar ela com o axios porém aqui vem o problema eu nao consegui fazer então nesse repositório https://github.com/cliff-bielinski/FullStackOpen/blob/main/part2/countries/src/App.js e também nesse https://github.com/snlagr/fullstackopen/blob/main/part2/countries/src/components/ShowWeather.js porém ainda não me sinto confortavel de seguir em frente daqui para frente eu vou parar e voltar para os topicos passados e estudar mais porque porra parece que eu nao sei nada.

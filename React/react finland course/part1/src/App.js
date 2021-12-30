@@ -1,102 +1,46 @@
-import React, { useState, useEffect } from 'react'
+import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 
 //Componentes
-import Persons from './Exercises 2.6-2.10/Persons'
-import Filter from './Exercises 2.6-2.10/Filter'
-import PersonForm from './Exercises 2.6-2.10/PersonForm'
+import Search from './Exercises 2.12-2.14/Search'
+import ShowCountries from './Exercises 2.12-2.14/ShowCountries'
 
 const App = () => {
 
-    const [persons, setPersons] = useState([])
-    const [newName, setNewName] = useState('')
-    const [newNumber, setNewNumber] = useState('')
-    const [filter, setFilter] = useState('')
-
-    const addPerson = (e) => {
-
-        e.preventDefault()
-
-        const addPersonObject = {
-            name: newName,
-            number: newNumber,
-            id: persons.length + 1
-        }
-
-        const existentPersonName = persons.some(person => person.name === newName)
-
-        const existentPersonNumber = persons.some(person => person.number === newNumber)
-
-
-        if (existentPersonName) {
-
-            alert(`${newName} is already added to the phonebook.`)
-
-        } else if (existentPersonNumber) {
-
-            alert(`${newNumber} is already added to the phonebook.`)
-
-        } else {
-
-            setPersons(persons.concat(addPersonObject))
-            setNewName('')
-            setNewNumber('')
-        }
-
-    }
-
-    const handleNameChange = (e) =>{
-
-        setNewName(e.target.value)
-    
-    }
-
-    const handleNumberChange = (e) =>{
-
-        setNewNumber(e.target.value)
-    
-    }
-
-    const handleFilterChange = (e) => {
-
-        setFilter(e.target.value)
-    }
-
-    //1° se o input de filtrar estiver vazio faça 
-    const personToShow = filter === '' ? 
-        //2° senão filtre o array passando o parametro nome como objeto pois, se passar normal você não conseguirá acessar o parametro dentro do array.
-        persons : persons.filter(({name}) => 
-                                        name.toUpperCase()
-                                            .includes(filter.toUpperCase()) 
-        )
-
+    const [search, setSearch] = useState('')
+    const [countries, setCountries] = useState([])
 
     useEffect(() => {
-       console.log('first move')
-       axios
-            .get('http://localhost:3001/persons')
-            .then(response=> {
-                console.log('Promise retornada!')
-                setPersons(response.data)
-            })
+        
+        axios.get(`https://restcountries.com/v2/all`)
+             .then(response => {
+                 setCountries(response.data)
+                 //console.log(response.data)
+             })
+
     }, [])
 
+    
+    const filteredCountries = search !== '' ? 
+    countries.filter((country) => country.name.toLowerCase().includes(search.toLowerCase())) :
+    countries
+
+    const handleInputChange = (e) =>{
+
+        if(e.target.value.length === 0){
+            setSearch('')
+        }else{
+            setSearch(e.target.value)
+        }
+
+    }
 
     return (
         <div>
-            <h2>Phonebook</h2>
+            <Search value={search} onChange={handleInputChange}/>
 
-            <Filter filter={filter} onChangeFilter={handleFilterChange}/>
-            
-            <h3>add new</h3>
+            <ShowCountries filteredCountries={filteredCountries} setSearch={setSearch} />
 
-            <PersonForm onSubmit={addPerson} newName={newName} onChangName={handleNameChange} newNumber={newNumber} onChangNumber={handleNumberChange} />
-
-            <h3>Numbers</h3>
-
-            <div>
-                {personToShow.map(person => <Persons key={person.id} persons={person} />)}
-            </div>
         </div>
     )
 }
