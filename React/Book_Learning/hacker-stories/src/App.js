@@ -1,5 +1,9 @@
 import React from "react";
 
+//Importando Componentes
+import List from "./Componentes/List";
+import Search from "./Componentes/Search";
+
 const title = "React";
 
 const welcome = {
@@ -11,26 +15,31 @@ function getFood(food) {
   return food;
 }
 
-const list = [
-  {
-    header: "React",
-    url: "https://reactjs.org/",
-    author: "Jordan Walke",
-    num_comments: 3,
-    points: 4,
-    objectID: 0,
-  },
-  {
-    header: "Redux",
-    url: "https://redux.js.org/",
-    author: "Dan Abramov",
-    num_comments: 2,
-    points: 5,
-    objectID: 1,
-  },
-];
-
 const App = () => {
+
+  const stories = [
+    {
+      header: "React",
+      url: "https://reactjs.org/",
+      author: "Jordan Walke",
+      num_comments: 3,
+      points: 4,
+      objectID: 0,
+    },
+    {
+      header: "Redux",
+      url: "https://redux.js.org/",
+      author: "Dan Abramov",
+      num_comments: 2,
+      points: 5,
+      objectID: 1,
+    },
+  ];
+
+  const handleChange = (e) =>{
+    console.log(e.target.value)
+  }
+
   return (
     <div>
       <h1>Hello World</h1>
@@ -42,24 +51,12 @@ const App = () => {
 
       <h1>My Hacker Stories</h1>
 
-      <label htmlFor="search">Search: </label>
-      <input id="search" type="text" />
+      <Search onChange={handleChange}/>
 
       <hr />
 
-      {list.map((item) => {
-        return (
-          <div key={item.objectID}>
-            <h1>Tecnologia</h1>
-            <span>
-              <a href={item.url}>{item.header}</a>
-            </span>
-            <h2>Author: {item.author}</h2>
-            <h3>Comments: {item.num_comments}</h3>
-            <h4>Points: {item.points}</h4>
-          </div>
-        )
-      })}
+      <List list={stories}/>
+
     </div>
   )
 }
