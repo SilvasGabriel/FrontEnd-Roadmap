@@ -9,11 +9,12 @@ const ShowWeater = ({ country }) => {
 
     useEffect(() => {
 
-        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${country.capital}&appid=${apiKey}&units=metric`)
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${country.capital}&appid=${apiKey}`)
             .then(response => {
                 setWeather(response.data)
                 console.log(response.data)
             })
+
     }, [country])
 
     return (
@@ -22,7 +23,7 @@ const ShowWeater = ({ country }) => {
             <h2>Weather in {country.capital}</h2>
 
             <div>
-                <b>Temperature: </b> {weather.main.temp}  Celsius
+                <b>Temperature: </b> {(weather.main.temp)} Celsius
             </div>
 
             <div>
