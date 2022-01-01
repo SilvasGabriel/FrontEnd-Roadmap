@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 //Importando Componentes
 import List from "./Componentes/List";
@@ -36,9 +36,16 @@ const App = () => {
     },
   ];
 
-  const handleChange = (e) =>{
-    console.log(e.target.value)
+  const [searchTerm, setSearchTerm] = useState('')
+
+  const handleChange = (e) => {
+    setSearchTerm(e.target.value)
   }
+
+  const storiesSearched = stories.filter(story => 
+        story.header.toLowerCase()
+                    .includes(searchTerm.toLowerCase()))
+  
 
   return (
     <div>
@@ -51,11 +58,11 @@ const App = () => {
 
       <h1>My Hacker Stories</h1>
 
-      <Search onChange={handleChange}/>
+      <Search onSearch={handleChange} searchTerm={searchTerm}/>
 
       <hr />
 
-      <List list={stories}/>
+      <List list={storiesSearched}/>
 
     </div>
   )

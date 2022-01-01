@@ -2,3 +2,7 @@
 
 Os exercicios do livro estão bem simples por enquanto e até agora nem um problema conseguindo resolver os problemas antes de ele mostrar o exemplo até agora.
 Propriedades podem ser passadas em de um componente maior para o menor ou vice e versa deixando o codigo mais simples.Até agor zero problemas e aprendendo constantemente. 
+
+#Dia 2 Pdf: 58
+
+Os exercicios de passar props para componentes separados em si foi tranquilo testando aqui varias formas deu para pegar como eu posso passar e deixar o codigo mais limpo, também no caso do useState() podemos passar um estado de componentes separados foi interessante saber disso e também aprendi sobre o .filter() para ajudar a filtrar coisas em uma lista por exemplo.
