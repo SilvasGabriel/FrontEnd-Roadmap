@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js04_OperadorTernario.html - Operador Ternário</title>
+</head>
+
+<body>
+
+
+</body>
+<script>
+    /*
+        Objetivo:
+            Exemplos práticos de aplicações com Operador Ternário ? : , Operadores Relacionais e Operadores Aritmeticos
+            Utilização de sintaxes : (<codição>) ? <expressão para resultado verdadeiro> : <expressão para resultado falso>
+    */
+
+    //Definição de Variaveis
+    document.write('<p>----------------------')
+    document.write('<p>DEFINIÇÂO E ATRIBUIÇÃO DE VARIAVEIS')
+    document.write('<p> ver js_num = <b>30</b>; (js_num recebe um valor de 30)')
+    let js_num = 30
+
+    //Aplicando o Operador Ternário
+    document.write('<p>----------------------')
+    document.write('<p>OPERADOR TERNÁRIO <b>(? :)</b> com OPERADORES RELÁCIONAIS (==, !==, <)')
+
+    document.write('<p>js_num <b>==</b> 20 <b> ? </b> "SIM" <b> : </b> "NÃO" - Resposta => ')
+
+    ((js_num == 20) ? document.write('<b>SIM</b>') : document.write('<b>NÃO</b>'))
+
+    document.write('<p>js_num  <b>!=</b> 20 <b> ? </b> "SIM" <b> : </b> "NÃO" - Resposta => ')
+    
+    ((js_num != 20) ? document.write('<b>SIM</b>') : document.write('<b>NÃO</b>'))
+
+    document.write('<p>js_num <b> < </b> 20 <b> ? </b> "SIM" <b> : </b> "NÃO" - Resposta => ')
+    
+    ((js_num < 50) ? document.write('<b>SIM</b>') : document.write('<b>NÃO</b>'))
+
+    //Aplicando o Operador Ternário utilizando Expressões Aritmeticas e Operador Relacional
+
+    document.write('<p>----------------------')
+    document.write('<p>OPERADOR TERNÁRIO com EXPRESSÃO ARITMÉTICA')
+
+    document.write('<p>js_num <b>-</b> 20 <b> == </b> 0 <b> ? </b>  </b> "SIM" <b> : </b> "NÃO" - Resposta => ')
+    
+    (((js_num - 20) == 0) ? document.write('<b>SIM</b>') : document.write('<b>NÃO</b>'))
+
+
+</script>
+
+</html>

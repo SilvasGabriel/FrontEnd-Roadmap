@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js04_SwitchCase.html - Seleção Múltipla</title>
+</head>
+
+<body>
+
+    <form name="formCalend" method="post" action="">
+
+        Digite o mês (1 a 12): <input type="text" name="f_mes" size="4" maxlength="2" />
+        <p></p>
+
+        <input type="button" name="btn_processar" value="Processar" onclick="verificames()" />
+
+        <input type="reset" name="btn_cancelar" value="Cancelar" />
+        <p></p>
+
+        O Mês correspondente é : <input type="text" name="f_nome" size="18" maxlength="15" />
+
+    </form>
+
+</body>
+<script>
+    /*
+        Objetivo: Utilizando o recurso de seleção múltipla- switch...case, pesquisar o nome do mês de referência atráves do respectivo número do mês informado.
+            Objetivos/Métodos utilizados:
+        Entrada: document.form (entrada de dados via formulário)
+        Saida: document.form (saída de dados via formulário)
+        -   Importante:
+                Os campos do formulário serão identificados com o prefixo f_ -> Exemplo: f_mes
+                Os campos Javascript serão identificados com o prefixo js_ -> Exemplo: js_mes
+    */
+
+    //Definição de Variaveis
+    let js_mes
+
+    /*Inicio da função verificames() para a captura dos dados do formulário e pesquisa por Seleção Múltipla*/
+
+    function verificames() {
+
+        /*Captura do valor do mês do formulário f_mes e transferencia/atribuição para variável do Javascript js_mes*/
+        js_mes = parseInt(document.formCalend.f_mes.value)
+
+        /*Inicio da estrutura de Seleção switch...case*/
+
+        switch (js_mes) {
+
+            case 1:
+                document.formCalend.f_nome.value = 'Janeiro'
+                break;
+            case 2:
+                document.formCalend.f_nome.value = 'Fevereiro'
+                break;
+            case 3:
+                document.formCalend.f_nome.value = 'Março'
+                break;
+            case 4:
+                document.formCalend.f_nome.value = 'Abril'
+                break;
+            case 5:
+                document.formCalend.f_nome.value = 'Maio'
+                break;
+            case 6:
+                document.formCalend.f_nome.value = 'Junho'
+                break;
+            case 7:
+                document.formCalend.f_nome.value = 'Julho'
+                break;
+            case 8:
+                document.formCalend.f_nome.value = 'Agosto'
+                break;
+            case 9:
+                document.formCalend.f_nome.value = 'Setembro'
+                break;
+            case 10:
+                document.formCalend.f_nome.value = 'Outubro'
+                break;
+            case 11:
+                document.formCalend.f_nome.value = 'Novembro'
+                break;
+            case 12:
+                document.formCalend.f_nome.value = 'Dezembro'
+                break;
+            default:
+                document.formCalend.f_nome.value = '**Mês Inválido!**'
+                break;
+        }
+
+    }
+
+</script>
+
+</html>

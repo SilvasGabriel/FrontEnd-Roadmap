@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js05_UpperLowerCase.html - Conversão de string</title>
+</head>
+<body>
+    
+    <form action="" name="formcurso" method="post">
+
+        Digite seu Curso: <input type="text" name="f_cursodig" size="8" maxlength="4" /> (SIST) <p></p>
+
+        <input type="button" name="btn_validar" value="validar" onclick="codcurso()"/>
+        
+        <input type="reset" name="btn_cancelar" value="cancelar" />
+
+        Código do Curso: <input type="text" name="f_codcurso" size="13" maxlength="18" />
+
+    </form>
+
+</body>
+<script>
+
+    /*
+        Objetivo: Capturar o nome do curso e apresentar o código correspondente.
+        Verificar:
+        se js_cursodig for igual a SIST, apresentar o código "SIST001/FB"
+        caso contrário, apresentar mensagem "curso inválido!"
+            Entrada:  document.form
+            Saida: document.form (para o codigo válido no campo de saida do formulário)
+            Saida: window.alert (para codigo inválido por janela de alerta)
+        Formulário: formcurso
+        Função: codcurso
+        Evento: onclick 
+    */
+
+    //Definição de Variaveis
+    let js_cursodig
+
+    //Função codcurso()
+    function codcurso() {
+        js_cursodig = document.formcurso.f_cursodig.value
+
+        if(js_cursodig.toUpperCase() === 'SIST'){
+
+            document.formcurso.f_codcurso.value = 'SIST001/FB'
+        
+        }else{
+            window.alert('Curso Inválido!')
+        }
+    }
+
+</script>
+</html>

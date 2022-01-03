@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js01_Concatenacao.html</title>
+</head>
+<body>
+    <h3>Programa de concatenação de campos!</h3>
+
+    <form name="FormConcatena" action="" method="post">
+        Digite o nome..............: <input type="text" name="f_nome"/></br>
+        Digite o sobrenome......: <input type="text" name="f_sobrenome"/></br>
+        <input type="button" name="btn_concatena" value="Concatenar" onclick="concatenar()"/>
+        <input type="reset" name="btn_cancela" value="Cancelar"/>
+    </form>
+
+</body>
+<script>
+    /*
+        Objetivo: Capturar o nome e o sobrenome do usuário, concatenar(juntar) os campos e apresentar a saudação personalizada
+        Elementos de Entrada: método form do objeto document
+        Elementos de Saída: método alert do objeto window
+    */
+
+    //Definição de variáveis
+    let js_nome
+    let js_sobrenome
+    let js_nomecompleto
+
+    function concatenar() {
+
+        /*Entrada de Dados*/
+        //Chame a variável, depois oobjeto document iterando sempre o nome do formulário e depois o nome do input no final inserindo o valor com .value
+        js_nome = document.FormConcatena.f_nome.value
+        js_sobrenome = document.FormConcatena.f_sobrenome.value
+
+        /*Processamento de Dados*/
+        js_nomecompleto = js_nome+''+js_sobrenome
+
+        /*Saída de Dados*/
+        window.alert('Ol\u00e1 '+ js_nomecompleto )
+    }
+
+</script>
+</html>
