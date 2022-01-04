@@ -36,7 +36,7 @@ const App = () => {
     },
   ];
 
-  const [searchTerm, setSearchTerm] = useState('')
+  const [searchTerm, setSearchTerm] = useState('React')
 
   const handleChange = (e) => {
     setSearchTerm(e.target.value)
