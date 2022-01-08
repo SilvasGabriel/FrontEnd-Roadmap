@@ -120,6 +120,7 @@ footer > span {
     display: flex;
     justify-content: center;
     margin-top: 3.125rem;
+    height: 21.875rem;
 }
 
 #how-it-works > iframe{
