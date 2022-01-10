@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    color: #4d4e53;
+    background-color: #ffffff;
+    line-height: 1.5;
+    min-width: 18.125rem;
+}
+
+header{
+    display: block;
+    color: black;
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 0.625rem;
+}
+
+ul{
+    display: block;
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 2.5rem;
+}
+
+section article{
+    margin: 0.938rem;
+    font-size: 0.96rem;
+}
+
+section li{
+    margin: 0.938rem 0 0 1.25rem;
+}
+
+main{
+    display: block;
+}
+
+p{
+    display: block;
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
+code{
+    display: block;
+    text-align: left;
+    white-space: pre-line;
+    position: relative;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 2;
+    padding: 0.938rem;
+    margin: 0.625rem;
+    border-radius: 0.31rem;
+}
+
+
+/*id*/
+#navbar{
+    position: fixed;
+    min-width: 18.125rem;
+    width: 18.75rem;
+    height: 100%;
+    border-right: solid;
+    border-color: rgba(0, 22, 22, 0.4);
+}
+
+#navbar ul{
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#navbar li{
+    border-top: 0.063rem solid;
+    color: #4d4e53;
+    list-style: none;
+    position: relative;
+    width: 100%;
+    border-bottom: 0.063rem solid;;
+}
+
+#navbar a{
+    color: #4d4e53;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0.625rem 1.875rem;
+}
+
+#main-doc{
+    position: absolute;
+    margin-left: 19.375rem;
+    padding: 1.25rem;
+    margin-bottom: 6.875rem;
+}
+
+#main-doc header{
+    text-align: left;
+}
+
+/*Media Queries*/
+
+@media (max-width: 50.938rem){
+
+    #navbar{
+        position: absolute;
+        padding: 0;
+        margin: 0;
+        top: 0;
+        border: none;
+        border-bottom: 0.125rem solid;
+        max-height: 17.188rem;
+        width: 100%;
+        z-index: 1;
+    }
+
+    #navbar ul{
+        height: 12.938rem;
+    }
+
+    #main-doc{
+        position: relative;
+        margin-left: 0;
+        margin-top: 16.875rem;
+    }
+
+}
