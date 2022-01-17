@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 //Importando Componentes
 import List from "./Componentes/List";
@@ -36,7 +36,12 @@ const App = () => {
     },
   ];
 
-  const [searchTerm, setSearchTerm] = useState('React')
+
+  const [searchTerm, setSearchTerm] = useState(localStorage.getItem('search') || 'React')
+
+  useEffect(() => {
+    localStorage.setItem('search', searchTerm)
+  }, [searchTerm])
 
   const handleChange = (e) => {
     setSearchTerm(e.target.value)
