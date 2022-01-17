@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 
 //Importando Componentes
 import List from "./Componentes/List";
-import Search from "./Componentes/Search";
+import InputWithLabel from "./Componentes/Search";
 
 const title = "React";
 
@@ -43,7 +43,7 @@ const App = () => {
     localStorage.setItem('search', searchTerm)
   }, [searchTerm])
 
-  const handleChange = (e) => {
+  const handleSearch = (e) => {
     setSearchTerm(e.target.value)
   }
 
@@ -63,7 +63,11 @@ const App = () => {
 
       <h1>My Hacker Stories</h1>
 
-      <Search onSearch={handleChange} searchTerm={searchTerm}/>
+      <InputWithLabel
+      id="search" 
+      value={searchTerm}
+      onInputChange={handleSearch}
+      > <strong>Search</strong> </InputWithLabel>
 
       <hr />
 
