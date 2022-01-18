@@ -1,27 +1,21 @@
 import React from "react";
 
+//Componente
+import Item from "./Item";
 
-const List = ({list}) => {
+const List = ({list, onRemoveItem}) => {
   
-    return (
-    <div>
-      {list.map((item) => {
+  return(
 
-        return (
-          <div key={item.objectID}>
-            <h1>Tecnologia</h1>
-            <span>
-              <a href={item.url}>{item.header}</a>
-            </span>
-            <h2>Author: {item.author}</h2>
-            <h3>Comments: {item.num_comments}</h3>
-            <h4>Points: {item.points}</h4>
-          </div>
-        )
-
-      })}  
-    </div>
-  );
+      list.map((item) => (
+        <Item 
+        key={item.objectID}
+        item={item}
+        onRemoveItem={onRemoveItem}
+        />
+      ))
+  
+  )
 };
 
 export default List;
