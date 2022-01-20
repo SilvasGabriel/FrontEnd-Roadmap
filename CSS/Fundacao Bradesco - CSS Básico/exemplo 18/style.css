@@ -1,0 +1,42 @@
+#Menu ul li{
+
+    display: inline; 
+
+}
+
+a:hover{
+    background: rgb(104, 129, 211);
+    color: #1c0;
+    color: #00cc11;
+}
+
+#Menu ul li a{
+    float: left;
+    width: 82px;
+    height: 72px;
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+#Menu ul li.Home a{
+    background-position: 0, 0;
+}
+#Menu ul li.Agenda a{
+    background-position: -91px, 0;
+}
+#Menu ul li.Contato a{
+    background-position: -181px, 0;
+}
+
+#Menu ul li.Home a:hover{
+    background-position: 0, -78px;
+}
+#Menu ul li.Agenda a:hover{
+    background-position: -91px, -79px;
+}
+#Menu ul li.Contato a:hover{
+    background-position: -181px, -78px;
+}

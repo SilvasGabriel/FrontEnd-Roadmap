@@ -1,0 +1,19 @@
+.circle{
+    list-style: circle;
+}
+
+.square{
+    list-style: square;
+}
+
+.upper-roman{
+    list-style: upper-roman;
+}
+
+.lower-alpha{
+    list-style: lower-alpha;
+}
+
+.image{
+    list-style: url('arrowPurple.gif');
+}
